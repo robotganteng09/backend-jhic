@@ -11,12 +11,16 @@ class RegisterController extends Controller
 {
     public function index()
     {
-        return response()->json(Register::all(), 200);
+        return response()->json(Register::with('account')->get(), 200);
     }
 
     public function store(StorePPDBRequest $request)
     {
-        $register = Register::create($request->validated());
+        $register = Register::create([
+            'account_id' => $request->user()->id,
+            ...$request->validated()
+        ]);
+        
         return response()->json(['message' => 'Data berhasil disimpan', 'data' => $register], 201);
     }
 

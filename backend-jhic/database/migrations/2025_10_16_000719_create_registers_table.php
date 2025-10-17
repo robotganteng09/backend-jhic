@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('registers', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('account_id')
+                  ->unique()
+                  ->constrained('accounts')
+                  ->onDelete('cascade');
             $table->string('nama_siswa');
             $table->string('jurusan');
             $table->string('nama_walmur');
