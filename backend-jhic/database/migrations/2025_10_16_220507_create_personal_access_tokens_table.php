@@ -9,6 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+    // apa kek
     public function up(): void
     {
         Schema::create('personal_access_tokens', function (Blueprint $table) {
