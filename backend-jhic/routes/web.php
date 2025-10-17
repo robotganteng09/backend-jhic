@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Blog;
 
 // Redirect root ke dashboard
 Route::get('/', function () {
@@ -17,6 +18,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     })->name('ppdb');
     
     Route::get('/blog', function () {
-        return view('admin.blog');
+        $blogs = Blog::all();
+        return view('admin.blog', compact('blogs'));
     })->name('blog');
 });
