@@ -13,7 +13,7 @@ class Register extends Model
         'nama_walmur',
         'nohp_walmur',
         'nik',
-        'alamat'
+        'alamat',
     ];
 
     public function account() {

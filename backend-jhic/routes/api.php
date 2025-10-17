@@ -18,6 +18,7 @@ Route::get('/accounts', function() {
 });    // login akun
 
 // Protected routes (butuh token Sanctum)
+// Protected routes (butuh token Sanctum)
 Route::middleware('auth:sanctum')->group(function () {
 
     // Akun logout
@@ -33,3 +34,4 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('/registers/{id}', [RegisterController::class, 'update']);
     Route::delete('/registers/{id}', [RegisterController::class, 'destroy']);
 });
+

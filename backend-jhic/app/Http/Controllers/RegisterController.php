@@ -20,8 +20,11 @@ class RegisterController extends Controller
             'account_id' => $request->user()->id,
             ...$request->validated()
         ]);
-        
-        return response()->json(['message' => 'Data berhasil disimpan', 'data' => $register], 201);
+
+        return response()->json([
+            'message' => 'Data berhasil disimpan', 
+            'data' => $register
+        ], 201);
     }
 
     public function show($id)
@@ -41,7 +44,10 @@ class RegisterController extends Controller
         }
 
         $register->update($request->validated());
-        return response()->json(['message' => 'Data berhasil diperbarui', 'data' => $register]);
+        return response()->json([
+            'message' => 'Data berhasil diperbarui', 
+            'data' => $register
+        ]);
     }
 
     public function destroy($id)

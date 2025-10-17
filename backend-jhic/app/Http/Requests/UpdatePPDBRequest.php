@@ -20,16 +20,17 @@ class UpdatePPDBRequest extends FormRequest
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
     public function rules(): array
-    {
-        $id = $this->route('id');
-    
-        return [
-            'nama_siswa' => 'required|string|max:255',
-            'jurusan' => 'required|string|max:255',
-            'nama_walmur'  => 'required|string|max:255',
-            'nohp_walmur'  => 'required|string|max:20',
-            'nik'        => "required|string|max:20|unique:registers,nik,{$id}",
-            'alamat'     => 'required|string',
-        ];
-    }
+{
+    $id = $this->route('id');
+
+    return [
+        'nama_siswa'   => 'required|string|max:255',
+        'jurusan'      => 'required|string|max:255',
+        'nama_walmur'  => 'required|string|max:255',
+        'nohp_walmur'  => 'required|string|max:20',
+        'nik'          => "required|string|max:20|unique:registers,nik,{$id}",
+        'alamat'       => 'required|string',
+    ];
+}
+
 }
