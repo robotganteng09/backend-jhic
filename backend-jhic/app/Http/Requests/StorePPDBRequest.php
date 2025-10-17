@@ -24,6 +24,7 @@ class StorePPDBRequest extends FormRequest
         return [
             //
             'nama_siswa' => 'required|string|max:255',
+            'jurusan' => 'required|string|max:255',
             'nama_walmur' => 'required|string|max:255',
             'nohp_walmur' => 'required|string|max:20',
             'nik' => 'required|string|max:20|unique:registers,nik',
