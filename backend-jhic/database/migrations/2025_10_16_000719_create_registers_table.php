@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('registers', function (Blueprint $table) {
             $table->id();
             $table->string('nama_siswa');
+            $table->string('jurusan');
             $table->string('nama_walmur');
             $table->string('nohp_walmur');
-            $table->integer('nik')->unique();
+            $table->string('nik', 16)->unique();
             $table->text('alamat')->nullable();
             $table->timestamps();
         });
