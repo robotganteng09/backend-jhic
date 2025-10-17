@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_siswa');
             $table->string('nama_walmur');
+            $table->string('nohp_walmur');
             $table->integer('nik')->unique();
             $table->text('alamat')->nullable();
             $table->timestamps();
