@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('username');
             $table->string('email');
             $table->string('password');
-            $table->string('status')->default('belum_terdaftar');
             $table->timestamps();
         });
     }

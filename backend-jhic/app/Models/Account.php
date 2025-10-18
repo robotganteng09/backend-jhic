@@ -9,7 +9,7 @@ use Laravel\Sanctum\HasApiTokens;
 class Account extends Authenticatable
 {
     use HasApiTokens, Notifiable;
-    protected $fillable = ['username', 'email', 'password', 'status'];
+    protected $fillable = ['username', 'email', 'password'];
 
     protected $hidden = [
         'password',
